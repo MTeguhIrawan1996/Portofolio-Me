@@ -148,4 +148,14 @@
     border-radius: 50px;
     overflow: hidden;
   }
+  .proj-imgbx {
+    margin-bottom: 0px;
+  }
+  .proj-txtx h4 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .proj-txtx span {
+    font-size: 10px;
+  }
 }

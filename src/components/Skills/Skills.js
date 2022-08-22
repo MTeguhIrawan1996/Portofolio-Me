@@ -26,7 +26,7 @@ export const Skilss = () => {
   };
   return (
     <React.Fragment>
-      <section className="skill" id="skill">
+      <section className="skill" id="skills">
         <Container>
           <Row>
             <Col>
