@@ -106,43 +106,42 @@ export const NavBar = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <section>
-        <ul className="navbot p-0">
-          <li
-            className={`${activeLink === "Home" ? "active" : ""}`}
-            onClick={() => onUpdateActiveLink("Home")}
-          >
-            <a href="#home">
-              <span className="icon">
-                <HouseFill />
-              </span>
-              <span className="text">Home</span>
-            </a>
-          </li>
-          <li
-            className={`${activeLink === "Skills" ? "active" : ""}`}
-            onClick={() => onUpdateActiveLink("Skills")}
-          >
-            <a href="#skills">
-              <span className="icon">
-                <PersonWorkspace />
-              </span>
-              <span className="text">Skilss</span>
-            </a>
-          </li>
-          <li
-            className={`${activeLink === "Project" ? "active" : ""}`}
-            onClick={() => onUpdateActiveLink("Project")}
-          >
-            <a href="#project">
-              <span className="icon">
-                <Cast />
-              </span>
-              <span className="text">Project</span>
-            </a>
-          </li>
-        </ul>
-      </section>
+
+      <ul className="navbot p-0">
+        <li
+          className={`${activeLink === "Home" ? "active" : ""}`}
+          onClick={() => onUpdateActiveLink("Home")}
+        >
+          <a href="#home">
+            <span className="icon">
+              <HouseFill />
+            </span>
+            <span className="text">Home</span>
+          </a>
+        </li>
+        <li
+          className={`${activeLink === "Skills" ? "active" : ""}`}
+          onClick={() => onUpdateActiveLink("Skills")}
+        >
+          <a href="#skills">
+            <span className="icon">
+              <PersonWorkspace />
+            </span>
+            <span className="text">Skilss</span>
+          </a>
+        </li>
+        <li
+          className={`${activeLink === "Project" ? "active" : ""}`}
+          onClick={() => onUpdateActiveLink("Project")}
+        >
+          <a href="#project">
+            <span className="icon">
+              <Cast />
+            </span>
+            <span className="text">Project</span>
+          </a>
+        </li>
+      </ul>
     </React.Fragment>
   );
 };
