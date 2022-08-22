@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { NavIcon1, NavIcon2, NavIcon3 } from "../../assets";
 import { TabTitle } from "../../utils/generalFunction";
@@ -29,8 +29,14 @@ export const NavBar = () => {
   };
 
   const clasSetClick = (value) => {
-    value === "klik" ? setClick(true) : setClick(false);
+    setClick(true);
     setClasClick(value);
+  };
+  const clasSetClicked = (value) => {
+    setClick(false);
+    setTimeout(() => {
+      setClasClick(value);
+    }, 150);
   };
 
   return (
@@ -46,7 +52,7 @@ export const NavBar = () => {
           <Navbar.Toggle
             aria-controls="basic-navbar-nav"
             onClick={() =>
-              click === false ? clasSetClick("klik") : clasSetClick("")
+              click === false ? clasSetClick("klik") : clasSetClicked("")
             }
           >
             <span className="navbar-toggler-icon"></span>
@@ -83,13 +89,13 @@ export const NavBar = () => {
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">
-                <a href="#">
+                <a href="#a">
                   <img src={NavIcon1} alt="nv-1" />
                 </a>
-                <a href="#">
+                <a href="#b">
                   <img src={NavIcon2} alt="nv-2" />
                 </a>
-                <a href="#">
+                <a href="#c">
                   <img src={NavIcon3} alt="nv-3" />
                 </a>
               </div>
@@ -106,7 +112,7 @@ export const NavBar = () => {
             className={`${activeLink === "Home" ? "active" : ""}`}
             onClick={() => onUpdateActiveLink("Home")}
           >
-            <a href="#">
+            <a href="#home">
               <span className="icon">
                 <HouseFill />
               </span>
@@ -117,7 +123,7 @@ export const NavBar = () => {
             className={`${activeLink === "Skills" ? "active" : ""}`}
             onClick={() => onUpdateActiveLink("Skills")}
           >
-            <a href="#">
+            <a href="#skills">
               <span className="icon">
                 <PersonWorkspace />
               </span>
@@ -128,7 +134,7 @@ export const NavBar = () => {
             className={`${activeLink === "Project" ? "active" : ""}`}
             onClick={() => onUpdateActiveLink("Project")}
           >
-            <a href="#">
+            <a href="#project">
               <span className="icon">
                 <Cast />
               </span>
