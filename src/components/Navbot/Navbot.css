@@ -1,13 +1,13 @@
 .navbot {
   position: fixed;
+  margin: 20px;
   bottom: 0;
-  width: 100%;
+  width: 90%;
   height: 80px;
-  background-image: url("../../assets/img/b.png");
+  /* background-image: url("../../assets/img/b.png");
   background-position: top center;
-  background-size: cover;
+  background-size: cover; */
   z-index: 9999;
-
   box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
     10px 10px 70px rgba(0, 0, 0, 0.25), inset 5px 5px 10px rgba(0, 0, 0, 0.5),
     inset 5px 5px 20px rgba(255, 255, 255, 0.2),
@@ -117,7 +117,7 @@
   transform: translateY(-2px);
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .navbot {
     display: none;
   }

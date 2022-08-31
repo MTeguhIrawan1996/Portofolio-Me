@@ -99,9 +99,9 @@ export const NavBar = () => {
                   <img src={NavIcon3} alt="nv-3" />
                 </a>
               </div>
-              <button className="vvd" onClick={() => console.log("connect")}>
+              <a href="#contact" className="vvd">
                 <span>Lets'Connect</span>
-              </button>
+              </a>
             </span>
           </Navbar.Collapse>
         </Container>

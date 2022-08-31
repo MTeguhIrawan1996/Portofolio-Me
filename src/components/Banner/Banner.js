@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import { HeaderImg } from "../../assets";
@@ -6,7 +6,7 @@ import { HeaderImg } from "../../assets";
 export const Banner = () => {
   // const [loopNum, setLoopNum] = useState(0);
   // const [isDeleting, setIsDeleting] = useState(false);
-  const [text, setText] = useState("Front-End Web Developer");
+  // const [text, setText] = useState("Front-End Web Developer");
   // const [delta, setDelta] = useState(150 - Math.random() * 100);
   // const [index, setIndex] = useState(1);
   // const toRotate = ["Front-End", "Back-End", "Web Developer"];
@@ -58,7 +58,7 @@ export const Banner = () => {
               <span className="tagline">Welcome to my Portofolio</span>
               <h1>
                 {`Hi I'm M Teguh Irawan`}
-                <span className="wrap"> {text}</span>
+                <span className="wrap">Front-End Web Developer</span>
               </h1>
               <p>
                 Incididunt do in officia in elit ullamco dolore aute laborum
@@ -66,9 +66,9 @@ export const Banner = () => {
                 Qui cupidatat consequat magna mollit culpa et proident aliquip
                 in ea culpa non tempor incididunt.
               </p>
-              <button onClick={() => console.log("connect")}>
+              <a href="#contact" className="vvd">
                 Lets'connect <ArrowRightCircle size={25} />
-              </button>
+              </a>
             </Col>
             <Col xs={12} md={6} xl={5}>
               <img src={HeaderImg} alt="Header Img" />

@@ -38,7 +38,7 @@
   line-height: 1.5em;
   width: 96%;
 }
-.banner button {
+.banner .vvd {
   color: #fff;
   font-weight: 700;
   font-size: 20px;
@@ -46,14 +46,15 @@
   letter-spacing: 0.8px;
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
-.banner button svg {
+.banner .vvd svg {
   font-size: 25px;
   margin-left: 10px;
   transition: 0.3s ease-in-out;
   line-height: 1;
 }
-.banner button:hover svg {
+.banner .vvd:hover svg {
   margin-left: 25px;
 }
 .banner img {

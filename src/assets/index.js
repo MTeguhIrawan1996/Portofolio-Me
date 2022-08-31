@@ -11,6 +11,7 @@ import ColorSharp2 from "./img/color-sharp2.png";
 import Projek1 from "./img/project-img1.png";
 import Projek2 from "./img/project-img2.png";
 import Projek3 from "./img/project-img3.png";
+import ContactImg from "./img/contact-img.svg";
 
 export {
   Logo,
@@ -26,4 +27,5 @@ export {
   Projek1,
   Projek2,
   Projek3,
+  ContactImg,
 };
