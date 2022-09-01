@@ -2,6 +2,7 @@ import Logo from "./img/logo.svg";
 import NavIcon1 from "./img/nav-icon1.svg";
 import NavIcon2 from "./img/nav-icon2.svg";
 import NavIcon3 from "./img/nav-icon3.svg";
+import Github from "./img/github.svg";
 import HeaderImg from "./img/img.svg";
 import Meter1 from "./img/meter1.svg";
 import Meter2 from "./img/meter2.svg";
@@ -18,6 +19,7 @@ export {
   NavIcon1,
   NavIcon2,
   NavIcon3,
+  Github,
   HeaderImg,
   Meter1,
   Meter2,

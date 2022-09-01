@@ -3,52 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import { HeaderImg } from "../../assets";
 
-export const Banner = () => {
-  // const [loopNum, setLoopNum] = useState(0);
-  // const [isDeleting, setIsDeleting] = useState(false);
-  // const [text, setText] = useState("Front-End Web Developer");
-  // const [delta, setDelta] = useState(150 - Math.random() * 100);
-  // const [index, setIndex] = useState(1);
-  // const toRotate = ["Front-End", "Back-End", "Web Developer"];
-  // const periode = 2000;
-
-  // useEffect(() => {
-  //   let ticker = setInterval(() => {
-  //     tick();
-  //   }, delta);
-
-  //   return () => {
-  //     clearInterval(ticker);
-  //   };
-  // }, [text]);
-
-  // const tick = () => {
-  //   let i = loopNum % toRotate.length;
-  //   let fullText = toRotate[i];
-  //   let updateText = isDeleting
-  //     ? fullText.substring(0, text.length - 1)
-  //     : fullText.substring(0, text.length + 1);
-
-  //   setText(updateText);
-
-  //   if (isDeleting) {
-  //     setDelta((prevDelta) => prevDelta / 2);
-  //   }
-
-  //   if (!isDeleting && updateText === fullText) {
-  //     setIsDeleting(true);
-  //     setIndex((prevIndex) => prevIndex - 1);
-  //     setDelta(periode);
-  //   } else if (isDeleting && updateText === "") {
-  //     setIsDeleting(false);
-  //     setLoopNum(loopNum + 1);
-  //     setIndex(1);
-  //     setDelta(500);
-  //   } else {
-  //     setIndex((prevIndex) => prevIndex + 1);
-  //   }
-  // };
-
+const Banner = () => {
   return (
     <React.Fragment>
       <section className="banner" id="home">
@@ -57,7 +12,7 @@ export const Banner = () => {
             <Col xs={12} md={6} xl={7}>
               <span className="tagline">Welcome to my Portofolio</span>
               <h1>
-                {`Hi I'm M Teguh Irawan`}
+                {`Hi I'm M Teguh Irawan `}
                 <span className="wrap">Front-End Web Developer</span>
               </h1>
               <p>
@@ -79,3 +34,5 @@ export const Banner = () => {
     </React.Fragment>
   );
 };
+
+export default Banner;

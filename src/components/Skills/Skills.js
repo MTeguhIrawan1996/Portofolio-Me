@@ -4,7 +4,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { ColorSharp, Meter1, Meter2, Meter3 } from "../../assets";
 
-export const Skilss = () => {
+const Skills = () => {
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -71,3 +71,5 @@ export const Skilss = () => {
     </React.Fragment>
   );
 };
+
+export default Skills;

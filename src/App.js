@@ -1,26 +1,22 @@
+import React, { useEffect, useState } from "react";
+import Loader from "./utils/loader";
+import { Banner, Contact, Footer, Navbar, Proyek, Skills } from "./components";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { NavBar } from "./components/Navbar/Navbar";
-import { Banner } from "./components/Banner/Banner";
-import { Skilss } from "./components/Skills/Skills";
-import { Proyek } from "./components/Proyek/Project";
-import { Contact } from "./components/Contact/Contact";
-import { Footer } from "./components/Footer/Footer";
-import "./components/Banner/Banner.css";
-import "./components/Navbar/Navbar.css";
-import "./components/Navbot/Navbot.css";
-import "./components/Skills/Skilss.css";
-import "./components/Proyek/Project.css";
-import "./components/Contact/Contact.css";
-import "./components/Footer/Footer.css";
+import "./components/style.css";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setLoading(false);
+  }, []);
+  if (loading) return <Loader />;
   return (
     <>
       <div className="App">
-        <NavBar />
+        <Navbar />
         <Banner />
-        <Skilss />
+        <Skills />
         <Proyek />
         <Contact />
         <Footer />

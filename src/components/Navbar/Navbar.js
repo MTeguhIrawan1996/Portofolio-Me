@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
-import { NavIcon1, NavIcon2, NavIcon3 } from "../../assets";
+import { Github, NavIcon1, NavIcon3 } from "../../assets";
 import { TabTitle } from "../../utils/generalFunction";
 import { HouseFill, PersonWorkspace, Cast } from "react-bootstrap-icons";
 
-export const NavBar = () => {
+const NavBar = () => {
   const [activeLink, setActiveLink] = useState("Home");
   const [scrolled, setScrolled] = useState(false);
   const [clasClick, setClasClick] = useState("");
@@ -89,14 +89,26 @@ export const NavBar = () => {
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">
-                <a href="#a">
+                <a
+                  href="https://www.linkedin.com/in/m-teguh-irawan-774762229"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <img src={NavIcon1} alt="nv-1" />
                 </a>
-                <a href="#b">
-                  <img src={NavIcon2} alt="nv-2" />
+                <a
+                  href="https://github.com/MTeguhIrawan1996"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={Github} alt="nv-2" />
                 </a>
-                <a href="#c">
-                  <img src={NavIcon3} alt="nv-3" />
+                <a
+                  href="https://www.instagram.com/whaann__/?hl=id"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={NavIcon3} alt="Icon-IG" />
                 </a>
               </div>
               <a href="#contact" className="vvd">
@@ -145,3 +157,5 @@ export const NavBar = () => {
     </React.Fragment>
   );
 };
+
+export default NavBar;

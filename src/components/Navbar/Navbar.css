@@ -79,19 +79,19 @@ span.navbar-text {
 .social-icon a:hover::before {
   border-radius: 100%;
   border-left: 8px solid #fff;
-  /* border-right: 2px solid; */
+  border-right: 0px solid;
   /* transform: skewX(20deg); */
   color: #fff;
 }
 .social-icon a:hover::after {
-  border-radius: 50%;
+  /* border-radius: 50%; */
   /* border-left: 2px solid;
   border-right: 2px solid;
   transform: skewX(-20deg); */
-  color: #fff;
+  /* color: #fff; */
 }
 .social-icon a img {
-  width: 35%;
+  width: 45%;
 }
 .navbar-text .vvd {
   font-weight: 700;

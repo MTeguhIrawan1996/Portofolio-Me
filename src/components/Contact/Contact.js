@@ -1,47 +1,54 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import { Col, Container, Row } from "react-bootstrap";
 import { ContactImg } from "../../assets";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-export const Contact = () => {
-  const formInitialDetails = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    message: "",
-  };
-  const [formDetails, setFormDetails] = useState(formInitialDetails);
-  const [buttonText, setButtonText] = useState("Send");
-  const [status, setStatus] = useState({});
+const Contact = () => {
+  const [send, setSend] = useState(false);
+  const [sendText, setSendText] = useState("Send");
+  const form = useRef();
+  const inputName = useRef("");
+  const inputEmail = useRef("");
+  const inputTel = useRef("");
+  const inputMessage = useRef("");
 
-  const onFormUpdate = (category, value) => {
-    setFormDetails({ ...formDetails, [category]: value });
-  };
+  const notify = () => toast("Message sent successfully", { theme: "dark" });
 
-  const handleSubmit = async (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    // setButtonText("Sending...");
-
-    // let response = await fetch(`${process.env.REACT_APP_BASEAPI}contact`, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json;charset=utf-8",
-    //   },
-    //   body: JSON.stringify(formDetails),
-    // });
-    // setButtonText("Send");
-    // let result = await response.json();
-    // if (result.code === 200) {
-    //   setStatus({ succes: true, message: "Message sent successfully" });
-    // } else {
-    //   setStatus({
-    //     succes: false,
-    //     message: "Something went wrong, please try again later.",
-    //   });
-    // }
-    console.log("send");
+    if (send === true) {
+      setSendText("Send....");
+      emailjs
+        .sendForm(
+          `${process.env.REACT_APP_EMAIL_ID}`,
+          `${process.env.REACT_APP_TEMPLATE_ID}`,
+          form.current,
+          `${process.env.REACT_APP_USER_ID}`
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            setSendText("Send");
+            setSend(false);
+            notify();
+            e.target.reset();
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+    }
   };
-
+  const handleSend = () => {
+    inputName.current.value === "" ||
+    inputEmail.current.value === "" ||
+    inputMessage.current.value === "" ||
+    inputTel.current.value === ""
+      ? setSend(false)
+      : setSend(true);
+  };
   return (
     <React.Fragment>
       <section className="contact" id="contact">
@@ -52,70 +59,64 @@ export const Contact = () => {
             </Col>
             <Col md={6}>
               <h2>Get In Touch</h2>
-              <form onSubmit={handleSubmit}>
+              <form ref={form} onSubmit={sendEmail}>
                 <Row>
                   <Col sm={6} className="px-1">
                     <input
+                      ref={inputName}
                       type="text"
-                      value={formDetails.firstName}
-                      placeholder="First Name"
-                      onChange={(e) =>
-                        onFormUpdate("firstName", e.target.value)
-                      }
+                      name="user_name"
+                      placeholder="Name"
+                      required
                     />
                   </Col>
                   <Col sm={6} className="px-1">
                     <input
-                      type="text"
-                      value={formDetails.lastName}
-                      placeholder="Last Name"
-                      onChange={(e) => onFormUpdate("lastName", e.target.value)}
-                    />
-                  </Col>
-                  <Col sm={6} className="px-1">
-                    <input
+                      ref={inputEmail}
                       type="email"
-                      value={formDetails.email}
+                      name="user_email"
                       placeholder="Email"
-                      onChange={(e) => onFormUpdate("email", e.target.value)}
+                      required
                     />
                   </Col>
                   <Col sm={6} className="px-1">
                     <input
+                      ref={inputTel}
                       type="tel"
-                      value={formDetails.phone}
-                      placeholder="Phone Number"
-                      onChange={(e) => onFormUpdate("phone", e.target.value)}
+                      name="user_tel"
+                      placeholder="Telepon"
+                      required
                     />
                   </Col>
                   <Col md={12} className="px-1">
                     <textarea
-                      row="6"
-                      value={formDetails.message}
+                      ref={inputMessage}
+                      name="message"
                       placeholder="Message"
-                      onChange={(e) => onFormUpdate("message", e.target.value)}
-                    ></textarea>
-                    <button type="submit">
-                      <span>{buttonText}</span>
+                      required
+                    />
+                    <button type="submit" value="send" onClick={handleSend}>
+                      <span
+                        className={`${
+                          send === true
+                            ? "spinner-border spinner-border-sm"
+                            : ""
+                        }`}
+                        role="status"
+                        aria-hidden="true"
+                      ></span>{" "}
+                      <span>{sendText}</span>
                     </button>
                   </Col>
-                  {status.message && (
-                    <Col>
-                      <p
-                        className={
-                          status.success === false ? "danger" : "success"
-                        }
-                      >
-                        {status.message}
-                      </p>
-                    </Col>
-                  )}
                 </Row>
               </form>
             </Col>
           </Row>
+          <ToastContainer />
         </Container>
       </section>
     </React.Fragment>
   );
 };
+
+export default Contact;

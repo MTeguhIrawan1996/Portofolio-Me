@@ -3,35 +3,35 @@ import { Col, Container, Row, Nav, Tab } from "react-bootstrap";
 import { ColorSharp2, Projek1, Projek2, Projek3 } from "../../assets";
 import { ProjectCard } from "./ProjectCard";
 
-export const Proyek = () => {
+const Proyek = () => {
   const projects = [
     {
-      title: "Business Startup",
+      title: "Coming Soon",
       description: "Design & Development",
       imgUrl: Projek1,
     },
     {
-      title: "Business Startup",
+      title: "Coming Soon",
       description: "Design & Development",
       imgUrl: Projek2,
     },
     {
-      title: "Business Startup",
+      title: "Coming Soon",
       description: "Design & Development",
       imgUrl: Projek3,
     },
     {
-      title: "Business Startup",
+      title: "Coming Soon",
       description: "Design & Development",
       imgUrl: Projek1,
     },
     {
-      title: "Business Startup",
+      title: "Coming Soon",
       description: "Design & Development",
       imgUrl: Projek2,
     },
     {
-      title: "Business Startup",
+      title: "Coming Soon",
       description: "Design & Development",
       imgUrl: Projek3,
     },
@@ -72,8 +72,8 @@ export const Proyek = () => {
                       })}
                     </Row>
                   </Tab.Pane>
-                  <Tab.Pane eventKey="second">Lorem Ipsum</Tab.Pane>
-                  <Tab.Pane eventKey="third">lorem Ipsum</Tab.Pane>
+                  <Tab.Pane eventKey="second">Coming Soon...</Tab.Pane>
+                  <Tab.Pane eventKey="third">Coming Soon</Tab.Pane>
                 </Tab.Content>
               </Tab.Container>
             </Col>
@@ -84,3 +84,5 @@ export const Proyek = () => {
     </React.Fragment>
   );
 };
+
+export default Proyek;
