@@ -19,7 +19,7 @@ const Contact = () => {
     message: "",
     date: new Date().toDateString(),
   });
-
+  console.log(process.env.REACT_APP_CONTACT);
   const notify = () => toast("Message sent successfully", { theme: "dark" });
   const sendEmail = async (e) => {
     e.preventDefault();
