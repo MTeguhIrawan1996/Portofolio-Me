@@ -19,7 +19,6 @@ const Contact = () => {
     message: "",
     date: new Date().toDateString(),
   });
-  console.log(process.env.REACT_APP_CONTACT);
   const notify = () => toast("Message sent successfully", { theme: "dark" });
   const sendEmail = async (e) => {
     e.preventDefault();
@@ -66,8 +65,9 @@ const Contact = () => {
       ? setSend(false)
       : setSend(true);
   };
-  const handleChange = (e) =>
+  const handleChange = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
+  };
 
   return (
     <React.Fragment>
