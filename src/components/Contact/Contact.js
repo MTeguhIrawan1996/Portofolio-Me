@@ -1,44 +1,61 @@
 import React, { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
 import { Col, Container, Row } from "react-bootstrap";
 import { ContactImg } from "../../assets";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
 
 const Contact = () => {
   const [send, setSend] = useState(false);
   const [sendText, setSendText] = useState("Send");
-  const form = useRef();
   const inputName = useRef("");
   const inputEmail = useRef("");
   const inputTel = useRef("");
   const inputMessage = useRef("");
+  const [data, setData] = useState({
+    user_name: "",
+    user_email: "",
+    user_tel: "",
+    message: "",
+    date: new Date().toDateString(),
+  });
 
   const notify = () => toast("Message sent successfully", { theme: "dark" });
-
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
     if (send === true) {
       setSendText("Send....");
-      emailjs
-        .sendForm(
-          `${process.env.REACT_APP_EMAIL_ID}`,
-          `${process.env.REACT_APP_TEMPLATE_ID}`,
-          form.current,
-          `${process.env.REACT_APP_USER_ID}`
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
+      if (send === true) {
+        setSendText("Send....");
+        await axios
+          .post(`${process.env.REACT_APP_CONTACT}`, data)
+          .then((res) => {
             setSendText("Send");
             setSend(false);
             notify();
             e.target.reset();
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
+      // try {
+      //   const res = await fetch(`${process.env.REACT_APP_CONTACT}`, {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+      //     body: JSON.stringify(data),
+      //   });
+      //   if (res.ok) {
+      //     setSendText("Send");
+      //     setSend(false);
+      //     notify();
+      //     e.target.reset();
+      //   }
+      // } catch (error) {
+      //   console.log(error);
+      // }
     }
   };
   const handleSend = () => {
@@ -49,6 +66,9 @@ const Contact = () => {
       ? setSend(false)
       : setSend(true);
   };
+  const handleChange = (e) =>
+    setData({ ...data, [e.target.name]: e.target.value });
+
   return (
     <React.Fragment>
       <section className="contact" id="contact">
@@ -59,7 +79,7 @@ const Contact = () => {
             </Col>
             <Col md={6}>
               <h2>Get In Touch</h2>
-              <form ref={form} onSubmit={sendEmail}>
+              <form onSubmit={sendEmail}>
                 <Row>
                   <Col sm={6} className="px-1">
                     <input
@@ -67,6 +87,7 @@ const Contact = () => {
                       type="text"
                       name="user_name"
                       placeholder="Name"
+                      onChange={handleChange}
                       required
                     />
                   </Col>
@@ -75,6 +96,7 @@ const Contact = () => {
                       ref={inputEmail}
                       type="email"
                       name="user_email"
+                      onChange={handleChange}
                       placeholder="Email"
                       required
                     />
@@ -84,6 +106,7 @@ const Contact = () => {
                       ref={inputTel}
                       type="tel"
                       name="user_tel"
+                      onChange={handleChange}
                       placeholder="Telepon"
                       required
                     />
@@ -92,6 +115,7 @@ const Contact = () => {
                     <textarea
                       ref={inputMessage}
                       name="message"
+                      onChange={handleChange}
                       placeholder="Message"
                       required
                     />
