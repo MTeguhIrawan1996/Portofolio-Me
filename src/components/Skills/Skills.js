@@ -31,14 +31,10 @@ const Skills = () => {
           <Row>
             <Col>
               <div className="skill-bx">
-                <h2>Skill</h2>
+                <h2>Skills</h2>
                 <p>
-                  Velit non anim quis reprehenderit adipisicing irure est ad
-                  velit fugiat in minim consectetur. In in culpa exercitation
-                  veniam consequat consectetur incididunt. Cillum mollit nisi
-                  culpa ut nulla sunt. Exercitation anim est consequat tempor
-                  laboris ipsum non occaecat laborum officia. Pariatur tempor
-                  veniam fugiat occaecat amet proident.
+                  Have experience in website creation from the Front-end or
+                  Back-end side.
                 </p>
                 <Carousel
                   responsive={responsive}

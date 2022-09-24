@@ -77,6 +77,11 @@
   margin-bottom: 24px;
   cursor: pointer;
 }
+.img-cover {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
 .proj-imgbx::before {
   content: "";
   background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
@@ -89,6 +94,7 @@
 .proj-imgbx:hover::before {
   height: 100%;
 }
+
 .proj-txtx {
   position: absolute;
   text-align: center;
@@ -105,12 +111,15 @@
   opacity: 1;
   color: white;
 }
+
 .proj-txtx h4 {
   font-size: 30px;
   font-weight: 700;
   letter-spacing: 0.8px;
   line-height: 1.1em;
+  color: #fff;
 }
+
 .proj-txtx span {
   font-style: italic;
   font-weight: 400;

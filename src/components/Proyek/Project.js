@@ -1,39 +1,25 @@
 import React from "react";
 import { Col, Container, Row, Nav, Tab } from "react-bootstrap";
-import { ColorSharp2, Projek1, Projek2, Projek3 } from "../../assets";
+import { ColorSharp2, FrBooking, Template } from "../../assets";
 import { ProjectCard } from "./ProjectCard";
 
 const Proyek = () => {
   const projects = [
     {
-      title: "Coming Soon",
-      description: "Design & Development",
-      imgUrl: Projek1,
+      title: "Front-End",
+      description: "Ui Website Booking and Travel",
+      imgUrl: FrBooking,
+      url: "https://frontend-booking-qok5.vercel.app/",
     },
     {
       title: "Coming Soon",
       description: "Design & Development",
-      imgUrl: Projek2,
+      imgUrl: Template,
     },
     {
       title: "Coming Soon",
       description: "Design & Development",
-      imgUrl: Projek3,
-    },
-    {
-      title: "Coming Soon",
-      description: "Design & Development",
-      imgUrl: Projek1,
-    },
-    {
-      title: "Coming Soon",
-      description: "Design & Development",
-      imgUrl: Projek2,
-    },
-    {
-      title: "Coming Soon",
-      description: "Design & Development",
-      imgUrl: Projek3,
+      imgUrl: Template,
     },
   ];
   return (
@@ -43,12 +29,7 @@ const Proyek = () => {
           <Row>
             <Col>
               <h2>Projects</h2>
-              <p>
-                Irure anim voluptate nostrud sint. Reprehenderit aute dolor
-                tempor laborum irure consequat adipisicing incididunt do esse
-                est. Dolor laboris cillum occaecat ad. Eiusmod aliquip veniam
-                cupidatat mollit et et.
-              </p>
+              <p>Examples of some of the last projects I've developed</p>
               <Tab.Container id="projects-tabs" defaultActiveKey="first">
                 <Nav
                   variant="pills"

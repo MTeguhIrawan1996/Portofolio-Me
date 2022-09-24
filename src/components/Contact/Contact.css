@@ -20,13 +20,25 @@
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
   color: #fff;
-  margin: 0 0 8px 0;
+  margin: 8px 0 0 0;
   padding: 18px 26px;
   font-weight: 500;
   font-size: 18px;
   letter-spacing: 0.8px;
   transition: 0.3s ease-in-out;
 }
+.contact form .border-error {
+  border: 2px solid pink;
+  transition: 0.1s;
+}
+.contact form .span-error {
+  color: pink;
+  padding: 3px 26px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
 .contact form input:focus,
 .contact form textarea:focus {
   background: rgba(255, 255, 255, 1);
@@ -53,6 +65,11 @@
   border-radius: 10px 10px 10px 10px;
   position: relative;
   transition: 0.3s ease-in-out;
+  /* margin-left: 5px; */
+  /* width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center; */
 }
 .contact form button span {
   z-index: 1;
@@ -88,5 +105,13 @@
   }
   .contact img {
     margin-bottom: 40px;
+  }
+  .contact form .span-error {
+    font-size: 12px;
+    margin: 0 0 10px 0;
+  }
+  .contact form input,
+  .contact form textarea {
+    margin: 0;
   }
 }

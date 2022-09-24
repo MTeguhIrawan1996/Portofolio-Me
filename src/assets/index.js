@@ -9,9 +9,8 @@ import Meter2 from "./img/meter2.svg";
 import Meter3 from "./img/meter3.svg";
 import ColorSharp from "./img/color-sharp.png";
 import ColorSharp2 from "./img/color-sharp2.png";
-import Projek1 from "./img/project-img1.png";
-import Projek2 from "./img/project-img2.png";
-import Projek3 from "./img/project-img3.png";
+import FrBooking from "./img/fr-booking.png";
+import Template from "./img/template.png";
 import ContactImg from "./img/contact-img.svg";
 
 export {
@@ -26,8 +25,7 @@ export {
   Meter3,
   ColorSharp,
   ColorSharp2,
-  Projek1,
-  Projek2,
-  Projek3,
   ContactImg,
+  FrBooking,
+  Template,
 };

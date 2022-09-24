@@ -16,10 +16,8 @@ const Banner = () => {
                 <span className="wrap">Front-End Web Developer</span>
               </h1>
               <p>
-                Incididunt do in officia in elit ullamco dolore aute laborum
-                aliquip. Et ut voluptate voluptate ad laboris consectetur ipsum.
-                Qui cupidatat consequat magna mollit culpa et proident aliquip
-                in ea culpa non tempor incididunt.
+                I can make you a website that fits your needs with a budget that
+                can be considered. what are you waiting for, take action now
               </p>
               <a href="#contact" className="vvd">
                 Lets'connect <ArrowRightCircle size={25} />
