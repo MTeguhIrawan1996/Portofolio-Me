@@ -10,8 +10,10 @@ import Meter3 from "./img/meter3.svg";
 import ColorSharp from "./img/color-sharp.png";
 import ColorSharp2 from "./img/color-sharp2.png";
 import FrBooking from "./img/fr-booking.png";
+import FrStaycation from "./img/fr-staycation.png";
 import Template from "./img/template.png";
 import ContactImg from "./img/contact-img.svg";
+import FrMusic from "./img/fr-music.png";
 
 export {
   Logo,
@@ -28,4 +30,6 @@ export {
   ContactImg,
   FrBooking,
   Template,
+  FrStaycation,
+  FrMusic,
 };

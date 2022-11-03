@@ -1,20 +1,28 @@
 import React from "react";
 import { Col, Container, Row, Nav, Tab } from "react-bootstrap";
-import { ColorSharp2, FrBooking, Template } from "../../assets";
+import {
+  ColorSharp2,
+  FrBooking,
+  FrMusic,
+  FrStaycation,
+  Template,
+} from "../../assets";
 import { ProjectCard } from "./ProjectCard";
 
 const Proyek = () => {
   const projects = [
     {
-      title: "Front-End",
-      description: "Ui Website Booking and Travel",
+      title: "React Booking App",
+      description: "UI Website booking property in the world",
       imgUrl: FrBooking,
       url: "https://frontend-booking-qok5.vercel.app/",
     },
     {
-      title: "Coming Soon",
-      description: "Design & Development",
-      imgUrl: Template,
+      title: "Cloning Music App",
+      description:
+        "Spotify 2.0 Clone Music App with React 18 (Tailwind, Redux, RapidAPI)",
+      imgUrl: FrMusic,
+      url: "https://musicone-mteguhirawan1996.vercel.app/",
     },
     {
       title: "Coming Soon",
